@@ -32,8 +32,7 @@ export default function useRegister() {
   const handleChange = (e: Change) =>
     setState((s) => ({ ...s, [e.target.name]: e.target.value }));
 
-  const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const handleRegister = async () => {
     const magic = new Magic(process.env.PUBLISHABLE_API_KEY || "");
 
     try {
