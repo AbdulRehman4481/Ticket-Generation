@@ -131,7 +131,6 @@ export default function UseHome() {
     const pdf = new jsPDF();
 
     const pageWidth = pdf.internal.pageSize.getWidth();
-    const pageHeight = pdf.internal.pageSize.getHeight();
     const margin = 20;
     const lineHeight = 10;
     let yOffset = margin;
