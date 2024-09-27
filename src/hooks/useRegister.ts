@@ -32,9 +32,9 @@ export default function useRegister() {
   const handleChange = (e: Change) =>
     setState((s) => ({ ...s, [e.target.name]: e.target.value }));
 
-  const handleRegister = async (e: any) => {
-    const magic = new Magic(process.env.PUBLISHABLE_API_KEY || "");
+  const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const magic = new Magic(process.env.PUBLISHABLE_API_KEY || "");
 
     try {
       setLoading(true);
@@ -80,7 +80,7 @@ export default function useRegister() {
     fun();
   }, [state]);
 
-  const createUserProfile = async (state: any) => {
+  const createUserProfile = async (state: User) => {
     try {
       const myHeaders = new Headers();
       myHeaders.append("Content-Type", "application/json");

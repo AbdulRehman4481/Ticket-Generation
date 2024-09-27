@@ -1,6 +1,6 @@
 import jsPDF from "jspdf";
 import { Magic } from "magic-sdk";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 interface User {
   username: string;
   email: string;
