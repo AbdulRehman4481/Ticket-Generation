@@ -1,11 +1,9 @@
-// const { Pool } = require("pg");
 import { Pool } from "pg";
 const db = new Pool({
-  host: "localhost",
-  user: "postgres",
-  database: "interview",
-  port: 5000,
-  password: "abdulrehman344",
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false, 
+  },
 });
 
 export default db;
