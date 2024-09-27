@@ -1,7 +1,7 @@
 const nextConfig = {
     env: {
         PUBLISHABLE_API_KEY:"pk_live_CAD496BEFB74AB66",
-        DATABASE_URL:"postgresql://postgres.fxeyusbokdyukdcitrdk:abdulrehman344@aws-0-ap-south-1.pooler.supabase.com:6543/postgres"
+        POSTGRES_URL:"postgres://default:A7jQ9UBTqxHe@ep-purple-frost-a4145019-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require"
     },
   };
   
