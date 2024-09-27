@@ -27,7 +27,7 @@ export default function UseHome() {
 
   const fetchTickets = async () => {
     try {
-      const response = await fetch("/api/ticket");
+      const response = await fetch("https://ticket-generation.vercel.app/api/ticket");
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -90,7 +90,7 @@ export default function UseHome() {
   useEffect(() => {
     async function fetchUsers() {
       try {
-        const response = await fetch("/api/user");
+        const response = await fetch("https://ticket-generation.vercel.app/api/user");
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }

@@ -62,7 +62,7 @@ export default function useRegister() {
   };
   useEffect(() => {
     async function fun() {
-      await fetch("/api/user")
+      await fetch("https://ticket-generation.vercel.app/api/user")
         .then((response) => {
           if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
@@ -94,7 +94,7 @@ export default function useRegister() {
         body: raw,
       };
 
-      await fetch("https://ticket-generation.vercel.app/user", requestOptions);
+      await fetch("https://ticket-generation.vercel.app/api/user", requestOptions);
       console.log("Created");
     } catch (error) {
       console.log(error);
