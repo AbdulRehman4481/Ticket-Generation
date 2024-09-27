@@ -1,27 +1,9 @@
 import { NextResponse } from "next/server";
 import db from "../../../config/db";
-import Cors from "cors";
-const cors = Cors({
-  methods: ['GET', 'POST', 'OPTIONS'],
-  origin: 'https://ticket-generation.vercel.app', // Adjust as necessary
-});
-
-// Middleware to handle CORS preflight
-const runMiddleware = (req, res, fn) => {
-  return new Promise((resolve, reject) => {
-    fn(req, res, (result) => {
-      if (result instanceof Error) {
-        return reject(result);
-      }
-      return resolve(result);
-    });
-  });
-};
 
 db.connect();
 
 export const GET = async () => {
-  await runMiddleware(req, NextResponse.next(), cors);
   try {
     const response = await db.query("SELECT * FROM ticket");
     return NextResponse.json({
@@ -38,7 +20,6 @@ export const GET = async () => {
 };
 
 export const POST = async (req) => {
-  await runMiddleware(req, NextResponse.next(), cors);
   try {
     const { email,username,companyname,jobtitle } = await req.json();
     const query = "INSERT INTO ticket (email,username,companyname,jobtitle) VALUES($1,$2,$3,$4) RETURNING *";
