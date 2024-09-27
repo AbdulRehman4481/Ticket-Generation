@@ -94,7 +94,7 @@ export default function useRegister() {
         body: raw,
       };
 
-      await fetch("http://localhost:3000/api/user", requestOptions);
+      await fetch("https://ticket-generation.vercel.app/user", requestOptions);
       console.log("Created");
     } catch (error) {
       console.log(error);

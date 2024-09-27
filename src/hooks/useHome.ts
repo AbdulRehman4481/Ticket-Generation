@@ -56,7 +56,7 @@ export default function UseHome() {
         body: raw,
       };
 
-      await fetch("http://localhost:3000/api/ticket", requestOptions);
+      await fetch("https://ticket-generation.vercel.app/api/ticket", requestOptions);
       await fetchTickets();
     } catch (error) {
       console.error("Error generating ticket:", error);
